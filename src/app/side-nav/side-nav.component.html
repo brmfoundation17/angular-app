@@ -1,0 +1,17 @@
+<div class="container">
+  <h2>Side Nav Selction</h2>
+  <mat-checkbox [(ngModel)]="opened">sidenav.opened</mat-checkbox>
+  <mat-sidenav-container class="example-container">
+    <mat-sidenav class="side-nav-container" position="end" #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
+      (closed)="events.push('close!')">
+      Sidenav Content
+    </mat-sidenav>
+    <mat-sidenav-content>      
+      <div class="example-events">
+        <div *ngFor="let e of events">{{e}}</div>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  <hr />
+  </div>  
+ 
