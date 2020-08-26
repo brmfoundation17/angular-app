@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GridListModule } from './grid-list/grid-list.module';
 import { SideNavModule } from './side-nav/side-nav.module';
 import { DrawerModule } from './drawer/drawer.module';
+import { MatIconButtonModule } from './mat-icon-button/mat-icon-button.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { DrawerModule } from './drawer/drawer.module';
     DataTableModule,
     GridListModule,
     SideNavModule,
-    DrawerModule
+    DrawerModule,
+    MatIconButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
