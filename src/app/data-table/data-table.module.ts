@@ -4,10 +4,9 @@ import { DataTableComponent } from './data-table.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule  } from '@angular/material/sort';
-import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatButtonModule } from '@angular/material/button';
-import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [DataTableComponent],
@@ -16,10 +15,9 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatBottomSheetModule,
     MatButtonModule,
-    MatButtonToggleModule,
-    DragDropModule
+    DragDropModule,
+    HttpClientModule
   ]
 })
 export class DataTableModule { }

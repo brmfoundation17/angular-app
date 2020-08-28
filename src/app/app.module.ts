@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +10,8 @@ import { GridListModule } from './grid-list/grid-list.module';
 import { SideNavModule } from './side-nav/side-nav.module';
 import { DrawerModule } from './drawer/drawer.module';
 import { MatIconButtonModule } from './mat-icon-button/mat-icon-button.module';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { DataService } from './global/data.service';
 
 
 @NgModule({
@@ -18,7 +21,13 @@ import { MatIconButtonModule } from './mat-icon-button/mat-icon-button.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,    
+    AppRoutingModule,  
+    HttpClientInMemoryWebApiModule,
+    HttpClientModule,
+    
+    HttpClientInMemoryWebApiModule.forRoot(
+      DataService, { dataEncapsulation: false }
+    ),
     DataTableModule,
     GridListModule,
     SideNavModule,
