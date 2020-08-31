@@ -3,7 +3,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { moveItemInArray, CdkDragDrop } from '@angular/cdk/drag-drop';
-import { PeriodicElement } from '../drawer/drawer.component';
+import { TableDataModel } from '../global/table-data.model';
+import { DataTableService } from '../data-table/data-table.service';
 
 @Component({
   selector: 'app-data-table',
@@ -11,11 +12,11 @@ import { PeriodicElement } from '../drawer/drawer.component';
   styleUrls: ['./data-table.component.scss']
 })
 export class DataTableComponent implements OnInit{
-  //https://angular.io/tutorial/toh-pt6
-  data = [];
+  
+  data: TableDataModel[];
   columnsToDisplay: string[] = ['position', 'name', 'weight', 'symbol'];
  
-  dataSource = new MatTableDataSource<PeriodicElement>();
+  dataSource = new MatTableDataSource<TableDataModel>();
  
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.columnsToDisplay, event.previousIndex, event.currentIndex);
@@ -26,9 +27,17 @@ export class DataTableComponent implements OnInit{
   constructor(private service: DataTableService) { }
 
   ngOnInit() {
-    this.service.getTableData().subscribe((data:PeriodicElement[])=>{
-      this.data = data;
-    });
+    this.service.getTableData()
+      .subscribe((data:Array<TableDataModel>) =>{
+        for (var val of data) {
+          console.log("Value : "+val);
+          this.data.push(val);
+        }      
+      },
+      (error: any) => { 
+        console.log('error', error);
+      }       
+    );     
     this.dataSource.paginator = this.paginator;
     this.dataSource.data = this.data;
     this.dataSource.sort = this.sort;    

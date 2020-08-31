@@ -10,9 +10,7 @@ import { GridListModule } from './grid-list/grid-list.module';
 import { SideNavModule } from './side-nav/side-nav.module';
 import { DrawerModule } from './drawer/drawer.module';
 import { MatIconButtonModule } from './mat-icon-button/mat-icon-button.module';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { DataService } from './global/data.service';
-
+import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -22,19 +20,14 @@ import { DataService } from './global/data.service';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,  
-    HttpClientInMemoryWebApiModule,
     HttpClientModule,
-    
-    HttpClientInMemoryWebApiModule.forRoot(
-      DataService, { dataEncapsulation: false }
-    ),
     DataTableModule,
     GridListModule,
     SideNavModule,
     DrawerModule,
     MatIconButtonModule
   ],
-  providers: [],
+  providers: [{provide: APP_BASE_HREF, useValue: '/'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
