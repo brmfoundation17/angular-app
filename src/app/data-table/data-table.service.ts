@@ -13,7 +13,7 @@ export class DataTableService {
 
   getTableData(){
     console.log("Function Called : ");
-    return this.http.get<Array<TableDataModel>>(this.tableDataURL);
+    return this.http.get<TableDataModel[]>(this.tableDataURL);
     /*.pipe(
       map(responseData => {
         return responseData;

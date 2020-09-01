@@ -13,7 +13,7 @@ import { DataTableService } from '../data-table/data-table.service';
 })
 export class DataTableComponent implements OnInit{
   
-  data: TableDataModel[];
+  data=[];
   columnsToDisplay: string[] = ['position', 'name', 'weight', 'symbol'];
  
   dataSource = new MatTableDataSource<TableDataModel>();
@@ -21,6 +21,7 @@ export class DataTableComponent implements OnInit{
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.columnsToDisplay, event.previousIndex, event.currentIndex);
   }
+  
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator; // used for pagination
   @ViewChild(MatSort, {static: true}) sort: MatSort; //used for sorting
 
@@ -28,18 +29,15 @@ export class DataTableComponent implements OnInit{
 
   ngOnInit() {
     this.service.getTableData()
-      .subscribe((data:Array<TableDataModel>) =>{
-        for (var val of data) {
-          console.log("Value : "+val);
-          this.data.push(val);
-        }      
+      .subscribe((data:TableDataModel[]) =>{  
+        this.data=data;           
+        this.dataSource.data = this.data;     
       },
       (error: any) => { 
         console.log('error', error);
       }       
-    );     
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.data = this.data;
+    );       
+    this.dataSource.paginator = this.paginator;    
     this.dataSource.sort = this.sort;    
   }  
 }
