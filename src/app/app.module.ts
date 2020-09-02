@@ -11,10 +11,12 @@ import { SideNavModule } from './side-nav/side-nav.module';
 import { DrawerModule } from './drawer/drawer.module';
 import { MatIconButtonModule } from './mat-icon-button/mat-icon-button.module';
 import { APP_BASE_HREF } from '@angular/common';
+import { ReactiveFormModule } from './reactive-form/reactive-form.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,8 @@ import { APP_BASE_HREF } from '@angular/common';
     GridListModule,
     SideNavModule,
     DrawerModule,
-    MatIconButtonModule
+    MatIconButtonModule,
+    ReactiveFormModule
   ],
   providers: [{provide: APP_BASE_HREF, useValue: '/'}],
   bootstrap: [AppComponent]

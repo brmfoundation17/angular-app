@@ -5,14 +5,16 @@ import { GridListComponent } from './grid-list/grid-list.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { DrawerComponent } from './drawer/drawer.component';
 import { MatIconButtonComponent } from './mat-icon-button/mat-icon-button.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 const routes: Routes = [
-  { path:"",redirectTo:"iconbutton", pathMatch:"full" },
+  { path:"",redirectTo:"reactive-form", pathMatch:"full" },
   { path:"data-table",component:DataTableComponent } ,
   { path:"grid-list",component:GridListComponent },
   { path:"side-nav",component:SideNavComponent },
   { path:"drawer",component:DrawerComponent },
-  { path:"iconbutton", component:MatIconButtonComponent}
+  { path:"iconbutton", component:MatIconButtonComponent},
+  { path:"reactive-form", component:ReactiveFormComponent}
 ];
 
 @NgModule({

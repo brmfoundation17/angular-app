@@ -1,0 +1,8 @@
+<div class="container">
+    <h1>Reactive Form Module</h1>
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">  
+        <label>First Name: <input type="text" formControlName="firstName"></label><br />
+        <label>Last Name: <input type="text" formControlName="lastName"></label><br />
+        <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+    </form>
+</div>
