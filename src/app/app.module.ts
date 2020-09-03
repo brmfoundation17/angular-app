@@ -12,11 +12,11 @@ import { DrawerModule } from './drawer/drawer.module';
 import { MatIconButtonModule } from './mat-icon-button/mat-icon-button.module';
 import { APP_BASE_HREF } from '@angular/common';
 import { ReactiveFormModule } from './reactive-form/reactive-form.module';
-
-
+import { HeaderComponent } from './header/header.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
