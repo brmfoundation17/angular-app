@@ -29,9 +29,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
   imports: [
     CommonModule,
     MatIconModule,
-    MatButtonModule
-
-    
+    MatButtonModule    
   ]
 })
 export class MatIconButtonModule { }

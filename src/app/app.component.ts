@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angular-app';
   events: string[] = [];
-  opened: boolean;
+  opened=false;
+  showFiller = false;
 }

@@ -12,17 +12,16 @@ import { DrawerModule } from './drawer/drawer.module';
 import { MatIconButtonModule } from './mat-icon-button/mat-icon-button.module';
 import { APP_BASE_HREF } from '@angular/common';
 import { ReactiveFormModule } from './reactive-form/reactive-form.module';
-import { HeaderComponent } from './header/header.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCheckboxModule }  from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
+import { HomeModule } from './home/home.module';
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -36,13 +35,13 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     MatCheckboxModule,
 
-
     DataTableModule,
     GridListModule,
     SideNavModule,
     DrawerModule,
     MatIconButtonModule,
-    ReactiveFormModule
+    ReactiveFormModule,
+    HomeModule
   ],
   providers: [{provide: APP_BASE_HREF, useValue: '/'}],
   bootstrap: [AppComponent]
