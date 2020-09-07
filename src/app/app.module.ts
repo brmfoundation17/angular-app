@@ -13,6 +13,12 @@ import { MatIconButtonModule } from './mat-icon-button/mat-icon-button.module';
 import { APP_BASE_HREF } from '@angular/common';
 import { ReactiveFormModule } from './reactive-form/reactive-form.module';
 import { HeaderComponent } from './header/header.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatCheckboxModule }  from '@angular/material/checkbox';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +29,14 @@ import { HeaderComponent } from './header/header.component';
     BrowserAnimationsModule,
     AppRoutingModule,  
     HttpClientModule,
+    MatIconModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    FormsModule,
+    MatCheckboxModule,
+
+
     DataTableModule,
     GridListModule,
     SideNavModule,
