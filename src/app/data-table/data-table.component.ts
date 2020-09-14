@@ -5,6 +5,7 @@ import { MatSort } from '@angular/material/sort';
 import { moveItemInArray, CdkDragDrop } from '@angular/cdk/drag-drop';
 import { TableDataModel } from '../global/table-data.model';
 import { DataTableService } from '../data-table/data-table.service';
+import { CloseScrollStrategy } from '@angular/cdk/overlay';
 
 @Component({
   selector: 'app-data-table',
@@ -28,6 +29,7 @@ export class DataTableComponent implements OnInit{
   constructor(private service: DataTableService) { }
 
   ngOnInit() {
+    console.log("Data Table loaded...");
     this.service.getTableData()
       .subscribe((data:TableDataModel[]) =>{  
         this.data=data;           

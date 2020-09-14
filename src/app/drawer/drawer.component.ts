@@ -24,6 +24,7 @@ export class DrawerComponent implements OnInit {
   @ViewChild(MatSort, {static: true}) sort: MatSort; //used for sorting
 
   ngOnInit() {
+    console.log("Drawer loaded...");
     this.data=this.getData();
     this.dataSource.paginator = this.paginator;
     this.dataSource.data = this.data;

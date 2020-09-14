@@ -6,7 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./grid-list.component.scss']
 })
 
-export class GridListComponent {
+export class GridListComponent implements OnInit {
+  ngOnInit(): void {
+    console.log("Grid List loaded...");
+    throw new Error("Method not implemented.");
+  }
   
   tiles: Tile[] = [
     {text: 'One', cols: 3, rows: 1, color: 'lightblue'},

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
@@ -6,7 +6,11 @@ import { FormGroup, FormControl } from '@angular/forms';
   templateUrl: './reactive-form.component.html',
   styleUrls: ['./reactive-form.component.scss']
 })
-export class ReactiveFormComponent {
+export class ReactiveFormComponent implements OnInit{
+  ngOnInit(): void {
+    console.log("Reachtive Form loaded...");
+    throw new Error("Method not implemented.");
+  }
   profileForm = new FormGroup({
     firstName: new FormControl(''),
     lastName: new FormControl(''),

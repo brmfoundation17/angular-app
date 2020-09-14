@@ -11,6 +11,7 @@ export class SideNavComponent implements OnInit {
   events: string[] = [];
   opened: boolean;
   ngOnInit(): void {
+    console.log("SAide nv loaded...");
     
   }
 }
