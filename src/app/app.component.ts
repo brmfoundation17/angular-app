@@ -10,7 +10,7 @@ export class AppComponent implements OnInit{
   
   title = 'angular-app';
   events: string[] = [];
-  opened=false;
+  opened=true;
   showFiller = false;
   navigation = [];
   constructor(private navService: NavigationModelService){}
