@@ -8,8 +8,7 @@ import { Component, OnInit } from '@angular/core';
 
 export class GridListComponent implements OnInit {
   ngOnInit(): void {
-    console.log("Grid List loaded...");
-    throw new Error("Method not implemented.");
+    console.log("Grid List loaded...");    
   }
   
   tiles: Tile[] = [

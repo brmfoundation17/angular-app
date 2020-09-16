@@ -8,8 +8,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class ReactiveFormComponent implements OnInit{
   ngOnInit(): void {
-    console.log("Reachtive Form loaded...");
-    throw new Error("Method not implemented.");
+    console.log("Reachtive Form loaded...");    
   }
   profileForm = new FormGroup({
     firstName: new FormControl(''),

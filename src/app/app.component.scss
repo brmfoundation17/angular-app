@@ -5,3 +5,13 @@
     display: block;
     cursor: pointer;
 }
+ul{
+    list-style-type: none;
+    padding: 0px;
+    li{
+        border-top:1px dashed #5f72de;
+        a{color: #fff;padding: 5px 16px;   background-color: #3f51b5;}
+        :hover{text-decoration: none;background-color: #586bd6;}        
+    }   
+}
+mat-sidenav{height: 100%;background-color: #3f51b5;}

@@ -16,13 +16,13 @@
 
 <mat-sidenav-container class="example-container">
     <mat-sidenav class="main-side-nav" color="primary" #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')" (closed)="events.push('close!')">
-      <div class="container-fluid">
+      
         <ul>
           <li *ngFor="let item of navigation">
-            <a  routerLink="/\'{{}}" routerLinkActive="active">{{item.path}}</a>  
+            <a  routerLink="{{item.path}}" routerLinkActive="active">{{item.displayName}}</a>  
           </li>
         </ul>      
-      </div>
+      
     </mat-sidenav>
   
     <mat-sidenav-content>

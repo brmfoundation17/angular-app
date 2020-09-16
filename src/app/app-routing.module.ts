@@ -10,12 +10,12 @@ import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   { path:"",redirectTo:"home", pathMatch:"full" },
-  { path:"data-table",component:DataTableComponent } ,
-  { path:"grid-list",component:GridListComponent },
-  { path:"side-nav",component:SideNavComponent },
+  { path:"datatable",component:DataTableComponent } ,
+  { path:"gridlist",component:GridListComponent },
+  { path:"sidenav",component:SideNavComponent },
   { path:"drawer",component:DrawerComponent },
   { path:"iconbutton", component:MatIconButtonComponent},
-  { path:"reactive-form", component:ReactiveFormComponent},
+  { path:"reactiveform", component:ReactiveFormComponent},
   { path:"home", component:HomeComponent}
 ];
 
