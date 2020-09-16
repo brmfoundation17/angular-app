@@ -1,5 +1,7 @@
 <mat-toolbar color="primary">
- 
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
   <span>Angular App</span>
   <span class="example-spacer"></span>
   <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
@@ -8,18 +10,18 @@
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
     <mat-icon>share</mat-icon>
   </button>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="sidenav.toggle()">
-    <mat-icon>menu</mat-icon>
-  </button>
+  
 </mat-toolbar>
 
 
 <mat-sidenav-container class="example-container">
-    <mat-sidenav color="primary" #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')" (closed)="events.push('close!')">
+    <mat-sidenav class="main-side-nav" color="primary" #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')" (closed)="events.push('close!')">
       <div class="container-fluid">
-        <ul>        
-          <li *ngFor="let item of navigation"></li>
-        </ul>
+        <ul>
+          <li *ngFor="let item of navigation">
+            <a  routerLink="/\'{{}}" routerLinkActive="active">{{item.path}}</a>  
+          </li>
+        </ul>      
       </div>
     </mat-sidenav>
   

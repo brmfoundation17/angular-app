@@ -16,6 +16,6 @@ export class AppComponent implements OnInit{
   constructor(private navService: NavigationModelService){}
   ngOnInit(): void {
     console.log("App Component loaded...");  
-    this.navigation=  this.navService.getNavigation();
+    this.navigation= this.navService.getNavigation();
   }
 }
