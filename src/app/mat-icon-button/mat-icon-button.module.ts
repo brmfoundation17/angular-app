@@ -21,15 +21,13 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { PortalModule } from '@angular/cdk/portal';
 import { ScrollingModule } from '@angular/cdk/scrolling';
-
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
   declarations: [MatIconButtonComponent],
   imports: [
-    CommonModule,
-    MatIconModule,
-    MatButtonModule    
+    SharedModule,    
   ]
 })
 export class MatIconButtonModule { }

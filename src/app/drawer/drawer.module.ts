@@ -14,20 +14,18 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { SharedModule } from '../shared/shared.module';
 
 
 
 @NgModule({
   declarations: [DrawerComponent],
   imports: [
-    CommonModule,
+    SharedModule,
     FormsModule,
     ReactiveFormsModule,
     MatSidenavModule,
     MatBottomSheetModule,
-    MatButtonModule,
-    MatButtonToggleModule,
-    DragDropModule,
     MatCheckboxModule,
     MatInputModule,
     MatSelectModule,

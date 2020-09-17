@@ -16,7 +16,11 @@ const routes: Routes = [
   { path:"drawer",component:DrawerComponent },
   { path:"iconbutton", component:MatIconButtonComponent},
   { path:"reactiveform", component:ReactiveFormComponent},
-  { path:"home", component:HomeComponent}
+  { path:"home", component:HomeComponent},
+  {
+    path: 'i18n',
+    loadChildren: () => import('./internationalization-i18n/internationalization-i18n.module').then(m => m.InternationalizationI18nModule)
+  },
 ];
 
 @NgModule({

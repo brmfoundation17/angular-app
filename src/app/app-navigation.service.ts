@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { InternationalizationI18nComponent } from './internationalization-i18n/internationalization-i18n.component';
 
 @Injectable({
     providedIn: 'root'
@@ -30,7 +31,11 @@ export class NavigationModelService {
                 path: "reactiveform", 
                 component: 'ReactiveFormComponent',
                 displayName: "Reactive Form"
-            }       
+            },{
+                path: "i18n",
+                component: "InternationalizationI18nComponent",
+                displayName: "Internationalization"
+            }      
         ]   
     }
 }
