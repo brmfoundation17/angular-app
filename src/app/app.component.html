@@ -4,6 +4,12 @@
   </button>
   <span>Angular App</span>
   <span class="example-spacer"></span>
+  <select class="form-control" #selectedLang (change)="switchLang(selectedLang.value)">
+    <option *ngFor="let language of translate.getLangs()" [value]="language"
+      [selected]="language === translate.currentLang">
+      {{ language }}
+    </option>
+  </select>
   <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
     <mat-icon>favorite</mat-icon>
   </button>
@@ -15,14 +21,13 @@
 
 
 <mat-sidenav-container class="example-container">
-    <mat-sidenav class="main-side-nav" color="primary" #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')" (closed)="events.push('close!')">
-      
+    
+  <mat-sidenav class="main-side-nav" color="primary" #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')" (closed)="events.push('close!')">
         <ul>
           <li *ngFor="let item of navigation">
             <a  routerLink="{{item.path}}" routerLinkActive="active">{{item.displayName}}</a>  
           </li>
-        </ul>      
-      
+        </ul> 
     </mat-sidenav>
   
     <mat-sidenav-content>
@@ -30,5 +35,6 @@
         <router-outlet></router-outlet>
       </div>
     </mat-sidenav-content>
+    
 </mat-sidenav-container>
   

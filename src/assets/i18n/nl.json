@@ -7,5 +7,7 @@
     "Password": "Wachtwoord",
     "Bio": "Voer bio in",
     "TermsConditions": "Ik ga akkoord met de voorwaarden.",
-    "Submit": "voorleggen"
+    "Submit": "voorleggen",
+    "datatable":"Data Table Header",
+    "angularApp":"Translated Angular App"
 }

@@ -7,5 +7,7 @@
     "Password": "Password",
     "Bio": "Enter bio",
     "TermsConditions": "I agree to terms and conditions.",
-    "Submit": "Submit"
+    "Submit": "Submit",
+    "datatable":"Data Table Header",
+    "angularApp":"Angular App"
 }
