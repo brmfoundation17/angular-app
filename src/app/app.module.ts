@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { APP_BASE_HREF } from '@angular/common';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { HomeModule } from './home/home.module';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -24,7 +24,8 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,  
     HttpClientModule,
     MatSidenavModule,
-    HomeModule,
+    MatToolbarModule,
+    
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

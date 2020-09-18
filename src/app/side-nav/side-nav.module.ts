@@ -6,11 +6,13 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatInputModule} from '@angular/material/input';
 import { SharedModule } from '../shared/shared.module';
+import { SideNavRoutingModule } from '../side-nav/side-nav-routing.module';
 
 @NgModule({
   declarations: [SideNavComponent],
   imports: [
     SharedModule,
+    SideNavRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     MatSidenavModule,    

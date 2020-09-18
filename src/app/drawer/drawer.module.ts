@@ -16,12 +16,13 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { SharedModule } from '../shared/shared.module';
 
-
+import { DrawerRoutingModule } from '../drawer/drawer-routing.module';
 
 @NgModule({
   declarations: [DrawerComponent],
   imports: [
     SharedModule,
+    DrawerRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     MatSidenavModule,

@@ -22,12 +22,15 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { PortalModule } from '@angular/cdk/portal';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { SharedModule } from '../shared/shared.module';
+import { IconButtonRoutingModule } from '../mat-icon-button/icon-button-routing.module';
 
 
 @NgModule({
   declarations: [MatIconButtonComponent],
   imports: [
-    SharedModule,    
+    SharedModule, 
+    IconButtonRoutingModule
+       
   ]
 })
 export class MatIconButtonModule { }
