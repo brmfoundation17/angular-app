@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { InternationalizationI18nComponent } from './internationalization-i18n.component';
+import { I18nComponent } from './i18n.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: InternationalizationI18nComponent
+    component: I18nComponent
   }
 ];
 

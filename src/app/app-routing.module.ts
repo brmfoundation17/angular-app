@@ -29,7 +29,7 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   },{
     path: 'i18n',
-    loadChildren: () => import('./internationalization-i18n/internationalization-i18n.module').then(m => m.InternationalizationI18nModule)
+    loadChildren: () => import('./i18n/i18n.module').then(m => m.I18nModule)
   },
 ];
 

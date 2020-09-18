@@ -8,7 +8,7 @@ import { NavigationModelService } from './app-navigation.service';
 })
 export class AppComponent implements OnInit{
   
-  title = 'angular-app';
+  title = 'Angular App';
   events: string[] = [];
   opened=true;
   showFiller = false;
