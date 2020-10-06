@@ -1,8 +1,9 @@
-<div class="container">
-    <h1>Reactive Form Module</h1>
-    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">  
-        <label>First Name: <input type="text" formControlName="firstName"></label><br />
-        <label>Last Name: <input type="text" formControlName="lastName"></label><br />
-        <button type="submit" [disabled]="!profileForm.valid">Submit</button>
-    </form>
-</div>
+<form [formGroup]="mileageGroup">
+    <div formArrayName="mileageFormArray" *ngFor="let mileage of mileageGroup.get('mileageFormArray')['controls']; let i = index;">
+      <div class="row" [formGroupName]="i">
+        <input type="text" formControlName="lowerBound">
+        <input type="text" formControlName="upperBound">       
+      </div>
+    </div>
+    <button (click)="pringValue()">GET VALUE</button>
+  </form>

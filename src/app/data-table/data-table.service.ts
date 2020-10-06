@@ -13,13 +13,6 @@ export class DataTableService {
 
   getTableData(){
     console.log("Function Called : ");
-    return this.http.get<TableDataModel[]>(this.tableDataURL);
-    /*.pipe(
-      map(responseData => {
-        return responseData;
-      }),catchError(error =>{
-        return throwError("Something went wrong.");
-      })
-      ); */   
+    return this.http.get<TableDataModel[]>(this.tableDataURL);      
   }  
 }

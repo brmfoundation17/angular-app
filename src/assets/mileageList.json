@@ -1,0 +1,195 @@
+[
+
+    {
+
+        "cellOrchestration": "Mileage",
+
+        "cellCoordinate": 1,
+
+        "lowerBound": 0,
+
+        "upperBound": 100,
+
+        "matrixType": "Age&Mileage",
+
+        "isMb": true
+
+    },
+
+    {
+
+        "cellOrchestration": "Mileage",
+
+        "cellCoordinate": 2,
+
+        "lowerBound": 100,
+
+        "upperBound": 500,
+
+        "matrixType": "Age&Mileage",
+
+        "isMb": true
+
+    },
+
+    {
+
+        "cellOrchestration": "Mileage",
+
+        "cellCoordinate": 3,
+
+        "lowerBound": 500,
+
+        "upperBound": 3000,
+
+        "matrixType": "Age&Mileage",
+
+        "isMb": true
+
+    },
+
+    {
+
+        "cellOrchestration": "Mileage",
+
+        "cellCoordinate": 4,
+
+        "lowerBound": 3000,
+
+        "upperBound": 3500,
+
+        "matrixType": "Age&Mileage",
+
+        "isMb": true
+
+    },
+
+    {
+
+        "cellOrchestration": "Mileage",
+
+        "cellCoordinate": 5,
+
+        "lowerBound": 3500,
+
+        "upperBound": 4000,
+
+        "matrixType": "Age&Mileage",
+
+        "isMb": true
+
+    },
+
+    {
+
+        "cellOrchestration": "Mileage",
+
+        "cellCoordinate": 6,
+
+        "lowerBound": 4000,
+
+        "upperBound": 5000,
+
+        "matrixType": "Age&Mileage",
+
+        "isMb": true
+
+    },
+
+    {
+
+        "cellOrchestration": "Mileage",
+
+        "cellCoordinate": 7,
+
+        "lowerBound": 5000,
+
+        "upperBound": 6000,
+
+        "matrixType": "Age&Mileage",
+
+        "isMb": true
+
+    },
+
+    {
+
+        "cellOrchestration": "Mileage",
+
+        "cellCoordinate": 8,
+
+        "lowerBound": 6000,
+
+        "upperBound": 7000,
+
+        "matrixType": "Age&Mileage",
+
+        "isMb": true
+
+    },
+
+    {
+
+        "cellOrchestration": "Mileage",
+
+        "cellCoordinate": 9,
+
+        "lowerBound": 7000,
+
+        "upperBound": 8000,
+
+        "matrixType": "Age&Mileage",
+
+        "isMb": true
+
+    },
+
+    {
+
+        "cellOrchestration": "Mileage",
+
+        "cellCoordinate": 10,
+
+        "lowerBound": 8000,
+
+        "upperBound": 9500,
+
+        "matrixType": "Age&Mileage",
+
+        "isMb": true
+
+    },
+
+    {
+
+        "cellOrchestration": "Mileage",
+
+        "cellCoordinate": 11,
+
+        "lowerBound": 9500,
+
+        "upperBound": 10000,
+
+        "matrixType": "Age&Mileage",
+
+        "isMb": true
+
+    },
+
+    {
+
+        "cellOrchestration": "Mileage",
+
+        "cellCoordinate": 12,
+
+        "lowerBound": 10000,
+
+        "upperBound": 200000,
+
+        "matrixType": "Age&Mileage",
+
+        "isMb": true
+
+    }
+
+]
