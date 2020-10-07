@@ -1,9 +1,31 @@
 <form [formGroup]="mileageGroup">
     <div formArrayName="mileageFormArray" *ngFor="let mileage of mileageGroup.get('mileageFormArray')['controls']; let i = index;">
       <div class="row" [formGroupName]="i">
-        <input type="text" formControlName="lowerBound">
-        <input type="text" formControlName="upperBound">       
+        <div class="inputContainer">
+          <input type="text" formControlName="lowerBound">
+          <div class="action" *ngIf="mileageFlag[i].lowerBound">
+            <button mat-icon-button color="warn" (click)="updateValue(i,'lowerBound')">
+              <mat-icon>check</mat-icon>
+            </button>
+            <button mat-icon-button color="primary">
+              <mat-icon>clear</mat-icon>
+            </button>
+          </div>
+        </div>
+        <div class="inputContainer">
+          <input type="text" formControlName="upperBound">   
+          <div class="action" *ngIf="mileageFlag[i].upperBound">
+            <button mat-icon-button color="warn" (click)="updateValue(i,'upperBound')">
+              <mat-icon>check</mat-icon>
+            </button>
+            <button mat-icon-button color="primary">
+              <mat-icon>clear</mat-icon>
+            </button>  
+          </div> 
+        </div>   
       </div>
-    </div>
-    <button (click)="pringValue()">GET VALUE</button>
+    </div>    
   </form>
+  <div class="text-danger" *ngIf="errorFlag">
+    {{errorMessage}}
+  </div>
