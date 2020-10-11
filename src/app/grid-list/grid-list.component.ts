@@ -7,9 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class GridListComponent implements OnInit {
-  ngOnInit(): void {
-    console.log("Grid List loaded...");    
-  }
+  constructor(){}
+  ngOnInit(): void {}
   
   tiles: Tile[] = [
     {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
