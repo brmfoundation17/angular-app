@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router'
+import { Routes, RouterModule } from '@angular/router';
+import { DialogComponent } from './dialog/dialog.component';
 
 const routes: Routes = [
   { 
     path:"",
     redirectTo:"home", 
     pathMatch:"full"
+  },
+  {
+     path: 'dialog', component: DialogComponent
   },{
     path: 'datatable',
     loadChildren: () => import('./data-table/data-table.module').then(m => m.DataTableModule)
@@ -30,7 +34,7 @@ const routes: Routes = [
   },{
     path: 'i18n',
     loadChildren: () => import('./i18n/i18n.module').then(m => m.I18nModule)
-  },
+  }
 ];
 
 @NgModule({

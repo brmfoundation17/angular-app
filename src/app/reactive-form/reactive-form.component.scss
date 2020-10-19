@@ -1,0 +1,13 @@
+.custom-select-style.mat-select-panel {
+  background: rgba(255, 0, 0, 0.5);
+  color:#FFF;
+}
+.mat-select-value, .mat-option, .mat-select-arrow,
+.mat-form-field-appearance-legacy .mat-form-field-label{
+  color:#FFF;
+}
+
+.mat-form-field-infix {
+    padding: 0px;
+    border: 1px solid #789;
+}

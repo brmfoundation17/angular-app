@@ -35,7 +35,11 @@ export class NavigationModelService {
                 path: "i18n",
                 component: "I18nComponent",
                 displayName: "Internationalization"
-            }      
+            },{
+                path: "dialog",
+                component: "DialogComponent",
+                displayName: "Dialog"
+            }        
         ]   
     }
 }

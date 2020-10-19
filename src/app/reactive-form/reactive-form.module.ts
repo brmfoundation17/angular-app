@@ -5,6 +5,7 @@ import { ReactiveFormComponent } from './reactive-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormRoutingModule } from '../reactive-form/reactive-form-routing.module';
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -14,6 +15,7 @@ import { ReactiveFormRoutingModule } from '../reactive-form/reactive-form-routin
     SharedModule,
     ReactiveFormRoutingModule,
     ReactiveFormsModule,
+    MatSelectModule
   ]
 })
 export class ReactiveFormModule { }

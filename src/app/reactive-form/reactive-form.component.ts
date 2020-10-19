@@ -1,13 +1,14 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormArray, FormBuilder } from '@angular/forms';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { FormGroup, FormControl, FormArray, FormBuilder, Validators } from '@angular/forms';
 import { Mileage } from './model/mileage.model';
 import { FormDataService } from './service/form-data.service';
 
 @Component({
   selector: 'app-reactive-form',
   templateUrl: './reactive-form.component.html',
-  styleUrls: ['./reactive-form.component.scss']
+  styleUrls: ['./reactive-form.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class ReactiveFormComponent implements OnInit{
 
@@ -28,6 +29,10 @@ export class ReactiveFormComponent implements OnInit{
     private http: HttpClient,
     private formBuilder: FormBuilder,
   ){}
+  panelColor = new FormControl();
+  animalControl = new FormControl('', Validators.required);
+  selectFormControl = new FormControl('', Validators.required);
+  modelYears=[2001, 2002, 2003, 2004];
 
   updateValue(index:number, inputType:string){
     var arrayControl = this.mileageGroup.get('mileageFormArray') as FormArray;
@@ -144,4 +149,8 @@ export class MileageFlag{
     this.lowerBound = lowerBound;
     this.upperBound = upperBound;
   }
+}
+interface Animal {
+  name: string;
+  sound: string;
 }

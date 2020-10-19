@@ -1,3 +1,17 @@
+<h4>mat select</h4>
+<mat-form-field>
+  <mat-label>Panel color</mat-label>
+  <mat-select [formControl]="panelColor" panelClass="custom-select-style">
+    <mat-option value="red">Red</mat-option>
+    <mat-option value="green">Green</mat-option>
+    <mat-option value="blue">Blue</mat-option>
+  </mat-select>
+</mat-form-field>
+
+
+
+<!--
+
 <form [formGroup]="mileageGroup">
     <div formArrayName="mileageFormArray" *ngFor="let mileage of mileageGroup.get('mileageFormArray')['controls']; let i = index;">
       <div class="row" [formGroupName]="i">
@@ -29,3 +43,4 @@
   <div class="text-danger" *ngIf="errorFlag">
     {{errorMessage}}
   </div>
+  -->

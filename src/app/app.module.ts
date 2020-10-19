@@ -10,12 +10,13 @@ import { SharedModule } from './shared/shared.module';
 import {HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { DialogComponent } from './global/dialog/dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { AlertComponent } from './dialog/alert/alert.component';
+import { DialogModule } from './dialog/dialog.module';
 @NgModule({
   declarations: [
     AppComponent,
-    DialogComponent
+    AlertComponent
   ],
   imports: [
     SharedModule,
@@ -26,6 +27,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatSidenavModule,
     MatToolbarModule,
     MatDialogModule,
+    DialogModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
