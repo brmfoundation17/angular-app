@@ -10,13 +10,11 @@ import { SharedModule } from './shared/shared.module';
 import {HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { MatDialogModule } from '@angular/material/dialog';
-import { AlertComponent } from './dialog/alert/alert.component';
-import { DialogModule } from './dialog/dialog.module';
+import { UserConfigComponent } from './dialog/user-config/user-config.component';
 @NgModule({
   declarations: [
     AppComponent,
-    AlertComponent
+       
   ],
   imports: [
     SharedModule,
@@ -25,9 +23,7 @@ import { DialogModule } from './dialog/dialog.module';
     AppRoutingModule,  
     HttpClientModule,
     MatSidenavModule,
-    MatToolbarModule,
-    MatDialogModule,
-    DialogModule,
+    MatToolbarModule,    
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -39,7 +35,7 @@ import { DialogModule } from './dialog/dialog.module';
   ],
   providers: [{provide: APP_BASE_HREF, useValue: '/'}],
   bootstrap: [AppComponent],
-  entryComponents: []
+  entryComponents: [UserConfigComponent]
 })
 export class AppModule { }
 // AOT compilation support

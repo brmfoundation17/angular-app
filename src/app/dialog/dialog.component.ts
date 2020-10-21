@@ -1,24 +1,29 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { AlertComponent } from './alert/alert.component';
+import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { UserConfigComponent } from './user-config/user-config.component';
 
 @Component({
   selector: 'app-dialog',
   templateUrl: './dialog.component.html',
   styleUrls: ['./dialog.component.scss']
 })
-export class DialogComponent  {
+export class DialogComponent implements OnInit {
 
-  constructor(public dialog: MatDialog
-  ) {}
+  constructor(public dialog: MatDialog) { }
 
- 
-
-  openDialog() {
-    this.dialog.open(AlertComponent, {
-      data: {
-        title: 'Alert'
-      }
-    });
+  ngOnInit(): void {
   }
+  animal: string;
+  name: string;
+  
+  openDialog(): void {
+    let dialogRef = this.dialog.open(UserConfigComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`The dialog was closed : ${result}`);      
+    });
+  } 
+  
 }
+
+

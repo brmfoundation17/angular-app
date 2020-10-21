@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { I18nComponent } from './i18n/i18n.component';
+
 
 @Injectable({
     providedIn: 'root'

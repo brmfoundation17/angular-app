@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DialogComponent } from './dialog/dialog.component';
 
 const routes: Routes = [
   { 
@@ -9,7 +8,8 @@ const routes: Routes = [
     pathMatch:"full"
   },
   {
-     path: 'dialog', component: DialogComponent
+     path: 'dialog', 
+     loadChildren: () => import('./dialog/dialog.module').then(m => m.DialogModule)
   },{
     path: 'datatable',
     loadChildren: () => import('./data-table/data-table.module').then(m => m.DataTableModule)
