@@ -24,6 +24,7 @@ export class DataTableComponent implements OnInit{
   }
   
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator; // used for pagination
+  
   @ViewChild(MatSort, {static: true}) sort: MatSort; //used for sorting
 
   constructor(private service: DataTableService) { }
