@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 @NgModule({
   exports:[
     CommonModule,
@@ -12,8 +13,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatIconModule, 
     MatDialogModule,
     MatCheckboxModule,
-    FormsModule
-
+    FormsModule,
+    DragDropModule
   ]
 })
 export class SharedModule { }

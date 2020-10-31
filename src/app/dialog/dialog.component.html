@@ -2,3 +2,11 @@
 <hr />
 
 <button mat-raised-button color="accent" (click)="openDialog()">Open Popup</button>
+
+<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let modifiedDetails of modifiedUserConfig" cdkDrag>
+      <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+      {{modifiedDetails}}
+    </div>
+  </div>
+

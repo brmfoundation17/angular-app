@@ -1,6 +1,8 @@
 
   <h2 mat-dialog-title>Hi {{userConfiData.columnsToDisplay[0]}}</h2>
   <mat-dialog-content>
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
     <section class="user-configuration">
       <span class="user-config-list">
         <mat-checkbox
@@ -22,8 +24,19 @@
         </mat-checkbox>          
       </span>
     </section>
+    </div>
+    
+      <div class="col-sm-12 col-md-6">
+    <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let modifiedDetails of modifiedUserConfig" cdkDrag>
+        <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+        {{modifiedDetails}}
+      </div>
+    </div>
+    </div>
+    </div>
   </mat-dialog-content>
   
   <mat-dialog-actions align="end">
-  <button mat-button [mat-dialog-close]="userConfiData" cdkFocusInitial>Ok</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="userConfiData" cdkFocusInitial>Ok</button>
   </mat-dialog-actions>

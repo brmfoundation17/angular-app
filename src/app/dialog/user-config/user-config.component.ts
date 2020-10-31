@@ -1,3 +1,4 @@
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, Inject, OnInit } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -21,6 +22,8 @@ export class UserConfigComponent implements OnInit {
     }
 
   ngOnInit(): void {
+    this.modifiedUserConfig=this.userConfiData.columnsToDisplay;
+    
     this.userConfiData.columnsToDisplay.forEach(item =>{
       if(item=='vin')
       this.userConfigurationList.push(new UserConfiguration(item,true,'primary', true));
@@ -28,7 +31,10 @@ export class UserConfigComponent implements OnInit {
       this.userConfigurationList.push(new UserConfiguration(item,false,'primary', false));
     })
   }
-
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.modifiedUserConfig, event.previousIndex, event.currentIndex);
+    console.log("Modified Column : "+this.modifiedUserConfig);
+  }
   updateAllComplete() {
     this.allComplete = this.userConfigurationList!= null && this.userConfigurationList.every(t => t.completed);
     this.userConfigurationList.forEach(item =>{
