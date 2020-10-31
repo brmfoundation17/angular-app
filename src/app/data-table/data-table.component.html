@@ -1,9 +1,4 @@
 <h1>Table Data</h1>
-<h1>Dragable Items</h1>
-<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-  <div class="example-box" *ngFor="let d of data" cdkDrag>{{d.position}}</div>
-</div>
-
 <h1>Data Table supporting Dragable</h1>
 <div class="example-container mat-elevation-z8 mt-4">
     <table class="mat-elevation-z8" mat-table [dataSource]="dataSource"  

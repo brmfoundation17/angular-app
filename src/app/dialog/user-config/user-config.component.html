@@ -1,9 +1,29 @@
-<h1 mat-dialog-title>Test</h1>
-<mat-dialog-content>
-  <p>What's your favorite animal?</p>
+
+  <h2 mat-dialog-title>Hi {{userConfiData.columnsToDisplay[0]}}</h2>
+  <mat-dialog-content>
+    <section class="user-configuration">
+      <span class="user-config-list">
+        <mat-checkbox
+                      [checked]="allComplete"
+                      [indeterminate]="someComplete()"
+                      (change)="setAll($event.checked)"
+                      [color]="userConfigurationList[0].color"
+                      >                      
+          All
+        </mat-checkbox>
+      </span>
+      <span class="user-config-list" *ngFor="let userConfig of userConfigurationList">        
+        <mat-checkbox [(ngModel)]="userConfig.completed"
+                      [color]="userConfig.color"
+                      (ngModelChange)="updateAllComplete()"
+                      [disabled]="userConfig.disabled"
+                      >
+          {{userConfig.name}}
+        </mat-checkbox>          
+      </span>
+    </section>
+  </mat-dialog-content>
   
-</mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button mat-dialog-close mat-dialog-close="true">No Thanks</button>
-  <button mat-button mat-dialog-close mat-dialog-close="false">Ok</button>
-</mat-dialog-actions> 
+  <mat-dialog-actions align="end">
+  <button mat-button [mat-dialog-close]="userConfiData" cdkFocusInitial>Ok</button>
+  </mat-dialog-actions>

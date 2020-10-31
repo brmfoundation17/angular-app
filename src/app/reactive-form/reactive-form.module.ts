@@ -5,7 +5,9 @@ import { ReactiveFormComponent } from './reactive-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormRoutingModule } from '../reactive-form/reactive-form-routing.module';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule} from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FormsModule } from '@angular/forms'
 
 
 
@@ -15,7 +17,10 @@ import {MatSelectModule} from '@angular/material/select';
     SharedModule,
     ReactiveFormRoutingModule,
     ReactiveFormsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCheckboxModule,
+    FormsModule
+    
   ]
 })
 export class ReactiveFormModule { }

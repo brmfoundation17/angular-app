@@ -1,9 +1,22 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormGroup, FormControl, FormArray, FormBuilder, Validators } from '@angular/forms';
+import { ThemePalette } from '@angular/material/core';
 import { Mileage } from './model/mileage.model';
 import { FormDataService } from './service/form-data.service';
 
+export class UserConfiguration {
+  name: string;
+  completed: boolean;
+  color: ThemePalette;
+  disabled: boolean;
+  constructor(name:string, completed: boolean, color: ThemePalette, disabled:boolean){
+    this.name=name;
+    this.completed=completed;
+    this.color=color;
+    this.disabled=disabled;
+  }
+}
 @Component({
   selector: 'app-reactive-form',
   templateUrl: './reactive-form.component.html',
@@ -29,6 +42,79 @@ export class ReactiveFormComponent implements OnInit{
     private http: HttpClient,
     private formBuilder: FormBuilder,
   ){}
+  ngOnInit(): void {
+    this.createForm();
+    this.populateData();
+    this.column.forEach(item =>{
+      if(item=='vin')
+      this.userConfigurationList.push(new UserConfiguration(item,true,'primary', true));
+      else
+      this.userConfigurationList.push(new UserConfiguration(item,false,'primary', false));
+    })
+  } 
+ column = ['vin','comissionNumber','modelClass','vehicleType']
+ modifiedUserConfig:string[]=[];
+ userConfigurationList: UserConfiguration[] = [];
+
+  allComplete: boolean = false;
+
+  updateAllComplete() {
+    this.allComplete = this.userConfigurationList!= null && this.userConfigurationList.every(t => t.completed);
+    this.userConfigurationList.forEach(item =>{
+      if(item.completed==true){
+        this.modifiedUserConfig.push(item.name);
+      }
+    });
+  }
+
+  someComplete(): boolean {
+    if (this.userConfigurationList == null) {
+      return false;
+    }
+    return this.userConfigurationList.filter(t => t.completed).length > 0 && !this.allComplete;
+  }
+
+  setAll(completed: boolean) {
+    this.allComplete = completed;
+    if (this.userConfigurationList == null) {
+      return;
+    }
+    this.userConfigurationList.forEach(item =>{
+      if(item.name=='vin'){
+        item.completed = true;
+      }else{
+        item.completed = completed;
+      }
+       
+    });
+    if(this.allComplete==true){
+      this.modifiedUserConfig=this.column;
+    }else{
+      this.modifiedUserConfig=[];
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   panelColor = new FormControl();
   animalControl = new FormControl('', Validators.required);
   selectFormControl = new FormControl('', Validators.required);
@@ -118,10 +204,7 @@ export class ReactiveFormComponent implements OnInit{
     }    
   }
 
-  ngOnInit(): void {
-    this.createForm();
-    this.populateData();
-  } 
+
   populateData(){
     this.formDataService.getFormData().subscribe((data:Mileage[]) =>{  
       this.mileageList=data;  

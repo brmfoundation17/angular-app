@@ -13,11 +13,16 @@ export class DialogComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  animal: string;
-  name: string;
+  columnsToDisplay: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumn: string[] = ['position', 'name', 'weight']
   
   openDialog(): void {
-    let dialogRef = this.dialog.open(UserConfigComponent);
+    let dialogRef = this.dialog.open(UserConfigComponent,{
+      data: {
+        columnsToDisplay: this.columnsToDisplay,
+        displayedColumn: this.displayedColumn
+      }
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`The dialog was closed : ${result}`);      

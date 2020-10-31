@@ -7,6 +7,37 @@
     <mat-option value="blue">Blue</mat-option>
   </mat-select>
 </mat-form-field>
+<h2>Checkbox Module</h2>
+<hr />
+<section class="example-section">
+  <span class="example-list-section">
+    <mat-checkbox class="example-margin"
+                  [checked]="allComplete"
+                  [indeterminate]="someComplete()"
+                  (change)="setAll($event.checked)"
+                  [color]="userConfigurationList[0].color"
+                  >
+                  
+      All
+    </mat-checkbox>
+  </span>
+  <span class="example-list-section">
+    <ul>
+      <li *ngFor="let userConfig of userConfigurationList">
+        <mat-checkbox [(ngModel)]="userConfig.completed"
+                      [color]="userConfig.color"
+                      (ngModelChange)="updateAllComplete()"
+                      [disabled]="userConfig.disabled"
+                      >
+          {{userConfig.name}}
+        </mat-checkbox>
+      </li>
+    </ul>
+  </span>
+</section>
+
+
+
 
 
 

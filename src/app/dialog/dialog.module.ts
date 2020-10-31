@@ -9,9 +9,9 @@ import { UserConfigComponent } from './user-config/user-config.component';
 @NgModule({
   declarations: [DialogComponent, UserConfigComponent],
   imports: [
-    CommonModule,
+    SharedModule,
     DialogRoutingModule,
-    SharedModule
+    
   ]
 })
 export class DialogModule { }
