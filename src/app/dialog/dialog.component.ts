@@ -11,35 +11,25 @@ import { UserConfigComponent } from './user-config/user-config.component';
 export class DialogComponent implements OnInit {
 
   
-  columnsToDisplay: string[] = ['position', 'name', 'weight', 'symbol'];
-  displayedColumn: string[] = ['position', 'name', 'weight']
-  modifiedUserConfig:string[]=[];
-
+  columnsList: string[] = ['vin','position', 'name', 'weight', 'symbol'];
+  sortedColumnToDisplay: string[] = ['vin','position', 'name', 'symbol']
+  
   constructor(public dialog: MatDialog) { }
 
-  ngOnInit(): void {
-    this.modifiedUserConfig=this.columnsToDisplay;
+  ngOnInit(): void {    
   }
-  
-  drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.modifiedUserConfig, event.previousIndex, event.currentIndex);
-    console.log("Modified Column : "+this.modifiedUserConfig);
-  }
-
   openDialog(): void {
-    let dialogRef = this.dialog.open(UserConfigComponent,{
+    let userConfigDialogRef = this.dialog.open(UserConfigComponent,{
+      height: '500px',
+      width: '600px',
       data: {
-        columnsToDisplay: this.columnsToDisplay,
-        displayedColumn: this.displayedColumn
-
+        columnsList: this.columnsList,
+        sortedColumnToDisplay: this.sortedColumnToDisplay
       }
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    userConfigDialogRef.afterClosed().subscribe(result => {
       console.log(`The dialog was closed : ${result}`);      
     });
-  } 
-  
+  }   
 }
-
-

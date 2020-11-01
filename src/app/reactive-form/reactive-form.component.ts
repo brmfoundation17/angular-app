@@ -68,9 +68,11 @@ export class ReactiveFormComponent implements OnInit{
   }
 
   someComplete(): boolean {
+    this.modifiedUserConfig=[];
     if (this.userConfigurationList == null) {
       return false;
     }
+    console.log("Data : "+this.userConfigurationList)
     return this.userConfigurationList.filter(t => t.completed).length > 0 && !this.allComplete;
   }
 
