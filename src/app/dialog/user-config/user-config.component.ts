@@ -10,8 +10,8 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class UserConfigComponent implements OnInit {
   
-  sortedColumnToDisplay: string[]=[];
-  columnsList: UserConfiguration[]=[];
+  dialogSortedColumnToDisplay: string[]=[];
+  dialogColumnsList: UserConfiguration[]=[];
 
   allComplete: boolean = false;
   
@@ -23,53 +23,53 @@ export class UserConfigComponent implements OnInit {
     }
 
   ngOnInit(): void{
-    this.columnsList=[];
-    this.sortedColumnToDisplay=this.userConfiData.sortedColumnToDisplay;
-    this.userConfiData.columnsList.forEach(item =>{
+    this.dialogColumnsList=[];
+    this.dialogSortedColumnToDisplay=this.userConfiData.dialogSortedColumnToDisplay;
+    this.userConfiData.dialogColumnsList.forEach(item =>{
       if(item=='vin'){
-        this.columnsList.push(new UserConfiguration(item,true,'primary', true));        
-      }else if(this.userConfiData.sortedColumnToDisplay.indexOf(item) > -1){
-        this.columnsList.push(new UserConfiguration(item,true,'primary', false));
+        this.dialogColumnsList.push(new UserConfiguration(item,true,'primary', true));        
+      }else if(this.userConfiData.dialogSortedColumnToDisplay.indexOf(item) > -1){
+        this.dialogColumnsList.push(new UserConfiguration(item,true,'primary', false));
       }else{
-        this.columnsList.push(new UserConfiguration(item,false,'primary', false));
+        this.dialogColumnsList.push(new UserConfiguration(item,false,'primary', false));
       }                  
     });    
   }
 
   drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.sortedColumnToDisplay, event.previousIndex, event.currentIndex);
-    this.userConfiData.sortedColumnToDisplay=this.sortedColumnToDisplay;
+    moveItemInArray(this.dialogSortedColumnToDisplay, event.previousIndex, event.currentIndex);
+    this.userConfiData.dialogSortedColumnToDisplay=this.dialogSortedColumnToDisplay;
   }
 
   updateAllComplete(){
-    this.sortedColumnToDisplay=[];
-    this.allComplete = this.columnsList!= null && this.columnsList.every(t => t.completed);
+    this.dialogSortedColumnToDisplay=[];
+    this.allComplete = this.dialogColumnsList!= null && this.dialogColumnsList.every(t => t.completed);
     if(this.allComplete==true){
-      this.sortedColumnToDisplay=this.userConfiData.columnsList;
+      this.dialogSortedColumnToDisplay=this.userConfiData.dialogColumnsList;
     }else{
-      this.columnsList.forEach(item =>{    
+      this.dialogColumnsList.forEach(item =>{    
         if(item.completed){
-          this.sortedColumnToDisplay.push(item.name);        
+          this.dialogSortedColumnToDisplay.push(item.name);        
         }
       });      
     }
   }
 
   someComplete(): boolean {
-    if (this.columnsList == null) {
+    if (this.dialogColumnsList == null) {
       return false;
     }
-    return this.columnsList.filter(t => t.completed).length > 0 && !this.allComplete;
+    return this.dialogColumnsList.filter(t => t.completed).length > 0 && !this.allComplete;
   }
 
   setAll(completed: boolean) {
     this.allComplete = completed;
     
-    if(this.columnsList == null) {
+    if(this.dialogColumnsList == null) {
       return;
     }
     
-    this.columnsList.forEach(item =>{
+    this.dialogColumnsList.forEach(item =>{
       if(item.name=='vin'){
         item.completed = true;
       }else{
@@ -78,15 +78,15 @@ export class UserConfigComponent implements OnInit {
     });
     
     if(this.allComplete==true){
-      this.sortedColumnToDisplay=this.userConfiData.columnsList;
+      this.dialogSortedColumnToDisplay=this.userConfiData.dialogColumnsList;
     }else{
-      this.sortedColumnToDisplay=['vin'];
+      this.dialogSortedColumnToDisplay=['vin'];
     }
   }  
 }
 export interface UserConfiData {
-  columnsList: string[];
-  sortedColumnToDisplay: string[];
+  dialogColumnsList: string[];
+  dialogSortedColumnToDisplay: string[];
 }
 export class UserConfiguration {
   name: string;

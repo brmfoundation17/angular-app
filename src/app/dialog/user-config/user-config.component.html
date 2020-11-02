@@ -1,20 +1,30 @@
 
-  <h2 mat-dialog-title>User Configuration</h2>
+<div class="row">
+  <div class="col-sm-10">
+    <h2 mat-dialog-title>Manage & Re-Order columns</h2>
+  </div>
+  <div class="col-sm-2">
+    <mat-dialog-actions align="end">   
+      <mat-icon [mat-dialog-close]="userConfiData" cdkFocusInitial>close</mat-icon>  
+    </mat-dialog-actions>
+  </div>
+</div>
+  
   <mat-dialog-content>
     <div class="row">
-      <div class="col-sm-12 col-md-6">
+      <div class="col-sm-6">
         <section class="user-configuration">
           <span class="user-config-checkbox-list">
             <mat-checkbox
                           [checked]="allComplete"
                           [indeterminate]="someComplete()"
                           (change)="setAll($event.checked)"
-                          [color]="columnsList[0].color"
+                          [color]="dialogColumnsList[0].color"
                           >                      
               All
             </mat-checkbox>
           </span>
-          <span class="user-config-checkbox-list" *ngFor="let userConfig of columnsList">        
+          <span class="user-config-checkbox-list" *ngFor="let userConfig of dialogColumnsList">        
             <mat-checkbox [(ngModel)]="userConfig.completed"
                           [color]="userConfig.color"
                           (ngModelChange)="updateAllComplete()"
@@ -26,17 +36,15 @@
         </section>
       </div>
     
-      <div class="col-sm-12 col-md-6">
-        <div cdkDropList class="user-config-list" (cdkDropListDropped)="drop($event)">
-          <div class="user-config-box" *ngFor="let column of sortedColumnToDisplay" cdkDrag>
-            <div class="user-config-placeholder" *cdkDragPlaceholder></div>
-            {{column}}
+      <div class="col-sm-6">
+        <section class="user-configuration">
+          <div cdkDropList class="user-config-list" (cdkDropListDropped)="drop($event)">
+            <div class="user-config-box" *ngFor="let column of dialogSortedColumnToDisplay" cdkDrag>
+              <div class="user-config-placeholder" *cdkDragPlaceholder></div>
+              {{column}}
+            </div>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   </mat-dialog-content>
-  
-  <mat-dialog-actions align="end">
-    <button mat-raised-button color="primary" [mat-dialog-close]="userConfiData" cdkFocusInitial>Ok</button>
-  </mat-dialog-actions>

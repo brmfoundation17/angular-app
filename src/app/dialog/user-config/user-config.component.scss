@@ -1,41 +1,68 @@
+::ng-deep .mat-dialog-container{
+  height: 550px;
+  width: 700px;
+  background: #444;
+  border-radius: 0px;
+  padding: 20px;
+  color: #fff;
+  .mat-dialog-content{
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    max-height: 429px;
+    overflow: hidden;
+  }
+  .user-configuration{
+    overflow-y: scroll;
+    height: 450px;
+    background-color: #1A1A1A;
+    padding: 10px;
+  }
+  .mat-checkbox-disabled .mat-checkbox-label {
+    color: #fff;
+  }
+  .mat-dialog-actions {
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 0px;
+    align-items: center;
+    margin-bottom: 0px;
+    .mat-icon{
+      font-weight: bold;
+    }
+  } 
+}
+
 .user-config-checkbox-list{
     display: block;
 }
 .user-config-list {
-    width: 500px;
-    max-width: 100%;
-    border: solid 1px #ccc;
-    min-height: 60px;
-    display: block;
-    background: white;
-    border-radius: 4px;
-    overflow: hidden;
+    display: block; 
   }
   
   .user-config-box {
-    padding: 20px 10px;
-    border-bottom: solid 1px #ccc;
-    color: rgba(0, 0, 0, 0.87);
+    padding: 5px 0px;    
+    color: #fff;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
     cursor: move;
-    background: white;
-    font-size: 14px;
+    background: #1a1a1a;    
   }
   
   .cdk-drag-preview {
     box-sizing: border-box;
-    border-radius: 4px;
+    border-radius: 0px;
     box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
                 0 8px 10px 1px rgba(0, 0, 0, 0.14),
                 0 3px 14px 2px rgba(0, 0, 0, 0.12);
   }
   
   .cdk-drag-animating {
-    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+    transition: transform 250ms cubic-bezier(0, 0, 1, 1);
   }
   
   .user-config-box:last-child {
@@ -43,12 +70,12 @@
   }
   
   .user-config-list.cdk-drop-list-dragging .user-config-box:not(.cdk-drag-placeholder) {
-    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+    transition: transform 250ms cubic-bezier(0, 0, 1, 1);
   }
   
   .user-config-placeholder {
-    background: #ccc;
-    border: dotted 3px #999;
-    min-height: 60px;
-    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+    background: #444;
+    border: dotted 2px #999;
+    min-height: 40px;
+    transition: transform 250ms cubic-bezier(0, 0, 1, 1);
   }

@@ -1,0 +1,166 @@
+<!--Loading screen-->
+<div id="loading" *ngIf="loadingIcon">
+    <div class="loader">
+        <mat-spinner></mat-spinner>
+    </div>
+</div>
+
+<!-- Breadcrumbs Section -->
+<div class="breadcrumbs-container">
+    <div class="container-fluid">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">Home&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Company Fleet&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        </li>    
+        <li class="nav-item">
+          <a class="nav-link disabled">Grounding Details</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- End of Breadcrumbs Section -->
+  <div class="container-fluid">
+    
+    <!-- KPI Information -->
+    <div id="kpi-dashboard">
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-3 mb-2">
+                <div class="kpi-background ml-1 mr-1 p-3">
+                    <div class="imageBody"><img [src]="imageContainer['totalVin']"></div>
+                    <div class="text">
+                        <div class="kpi-header">Total VIN</div>
+                        <div class="kpi-body">{{totalVin}}</div>
+                    </div>
+                </div>                
+            </div>                        
+        </div>
+    </div> 
+    <!-- end of KPI Information -->
+    <!-- Page Header -->
+    <div class="page-header">
+      <div class="row">
+        <div class="col">
+          <h1>Company Fleet</h1>
+        </div>
+      </div>  
+    </div>
+    <!-- End of Page Header -->
+    <!-- Search Panel -->
+    <div class="search-container p-2">       
+        <div id="search-input-container" class=" pt-3">
+            <div [formGroup]="vehicleSearchForm">
+                <div class="row" >
+                                
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <input  formControlName="vin" class="input-field w-100" placeholder="VIN"/>
+                    </div>
+                    
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <input  formControlName="commissionNumber" class="input-field w-100" placeholder="Commission Number"/>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 p-3">
+
+                        <span class="user-config-checkbox-list" *ngFor="let checkList of vehicleTypeCheckList;">        
+                            <mat-checkbox [(ngModel)]="checkList.completed"
+                                          [color]="checkList.color"
+                                          (ngModelChange)="vehicleType()"
+                                          [disabled]="checkList.disabled"
+                                          [value]="checkList.value"
+                                          >
+                              {{checkList.label}}
+                            </mat-checkbox>          
+                        </span>
+                       <!-- <label *ngFor="let vehicle of vehicleTypeList;">
+                            <input type="checkbox" [value]="vehicle" (change)="onCheckboxChange($event)">
+                            {{vehicle}} &nbsp;&nbsp;
+                        </label> -->
+                    </div>
+                </div>
+                <div class="row">                    
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <input type="text" class="input-field w-100" placeholder="Model Name" formControlName="modelName" [matAutocomplete]="autoModelName">
+                        <mat-autocomplete #autoModelName="matAutocomplete">
+                            <mat-option *ngFor="let model of filteredModelName | async" [value]="model">
+                            {{model}}
+                            </mat-option>
+                        </mat-autocomplete>
+                    </div>
+                    
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <input type="text" class="input-field w-100" placeholder="Model Year" formControlName="modelYear" [matAutocomplete]="autoModelYear">
+                        <mat-autocomplete #autoModelYear="matAutocomplete">
+                            <mat-option *ngFor="let year of filteredModelYear | async" [value]="year">
+                            {{year}}
+                            </mat-option>
+                        </mat-autocomplete>
+                    </div> 
+                    
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <input type="text" class="input-field w-100" placeholder="Model Class" formControlName="modelClass" [matAutocomplete]="autoModelClass">
+                        <mat-autocomplete #autoModelClass="matAutocomplete">
+                            <mat-option *ngFor="let mClass of filteredModelClass | async" [value]="mClass">
+                            {{mClass}}
+                            </mat-option>
+                        </mat-autocomplete>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                        <input type="text" class="input-field w-100" placeholder="Usage Code-Description" formControlName="usageCodeDescription" [matAutocomplete]="autoCodeDescription">
+                        <mat-autocomplete #autoCodeDescription="matAutocomplete">
+                            <mat-option *ngFor="let usageCodeDesc of filteredUsageCodeDesc | async" [value]="usageCodeDesc">
+                            {{usageCodeDesc}}
+                            </mat-option>
+                        </mat-autocomplete>
+                    </div>   
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                        <div class="filterButtonContainer text-right">
+                            <div class="pull-right">
+                                <img class="m-1" [src]="imageContainer['reset']" (click)="resetSearchForm()">                    
+                                <img class="ml-1" [src]="imageContainer['search']" (click)="searchVehicle()">
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div> 
+            
+        </div> 
+    </div>
+    <!-- End of Search Panel -->
+    
+    <div class="d-flex mb-1 table-header">
+        <div (click)="userConfigDialog()" class="p-2">
+            <button mat-icon-button >
+                <mat-icon>settings</mat-icon>
+            </button>
+        </div>
+            
+        <!--<div class="p-2 ml-auto download">
+            <button mat-icon-button >
+                <mat-icon>get_app</mat-icon>
+            </button>
+        </div>-->
+    </div>
+    <div class="data-table-container">
+        <table mat-table class="mat-elevation-z8"
+            matSort
+            [dataSource]="dataSource"
+            >
+            <ng-container [matColumnDef]="column" *ngFor="let column of columnsList">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>                   
+                    {{column | translate}}                    
+                <td mat-cell *matCellDef="let tableData"> {{tableData[column]}} </td>
+            </ng-container>          
+        
+            <tr mat-header-row *matHeaderRowDef="sortedColumnToDisplay; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: sortedColumnToDisplay;"></tr>
+        </table>
+    </div>
+    <div class="loadMore text-center mt-2">
+        <button mat-icon-button (click)="loadMoreData()">
+            <mat-icon>forward_{{pageSize}}</mat-icon>Load More
+        </button>       
+    </div>   
+</div>
