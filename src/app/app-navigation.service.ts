@@ -39,7 +39,15 @@ export class NavigationModelService {
                 path: "dialog",
                 component: "DialogComponent",
                 displayName: "Dialog"
-            }        
+            },{
+                path: "lazy-loading",
+                component: "LazyLoadingComponent",
+                displayName: "Lazy Loading"
+            },{
+                path: "tab",
+                component: "TabComponent",
+                displayName: "Tab"
+            }             
         ]   
     }
 }

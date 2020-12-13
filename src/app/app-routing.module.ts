@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { TabComponent } from './tab/tab.component';
 
 const routes: Routes = [
   { 
@@ -34,6 +35,12 @@ const routes: Routes = [
   },{
     path: 'i18n',
     loadChildren: () => import('./i18n/i18n.module').then(m => m.I18nModule)
+  },{
+    path: 'lazy-loading',
+    loadChildren: () => import('./lazy-loading/lazy-loading.module').then(m => m.LazyLoadingModule)
+  },{
+    path: 'tab',
+    component: TabComponent
   }
 ];
 

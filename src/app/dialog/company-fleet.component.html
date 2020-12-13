@@ -90,27 +90,40 @@
                     </div>
                     
                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-                        <input type="text" class="input-field w-100" placeholder="Model Year" formControlName="modelYear" [matAutocomplete]="autoModelYear">
+                        <input type="text" 
+                        class="input-field w-100" 
+                        placeholder="Model Year" 
+                        formControlName="modelYear" 
+                        [matAutocomplete]="autoModelYear">
                         <mat-autocomplete #autoModelYear="matAutocomplete">
-                            <mat-option *ngFor="let year of filteredModelYear | async" [value]="year">
+                            <mat-option *ngFor="let year of filteredModelYear | async" 
+                            [value]="year">
                             {{year}}
                             </mat-option>
                         </mat-autocomplete>
                     </div> 
                     
                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-                        <input type="text" class="input-field w-100" placeholder="Model Class" formControlName="modelClass" [matAutocomplete]="autoModelClass">
+                        <input type="text" class="input-field w-100" 
+                                placeholder="Model Class" 
+                                formControlName="modelClass" 
+                                [matAutocomplete]="autoModelClass">
                         <mat-autocomplete #autoModelClass="matAutocomplete">
-                            <mat-option *ngFor="let mClass of filteredModelClass | async" [value]="mClass">
+                            <mat-option *ngFor="let mClass of filteredModelClass | async" 
+                            [value]="mClass">
                             {{mClass}}
                             </mat-option>
                         </mat-autocomplete>
                     </div>
 
                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-                        <input type="text" class="input-field w-100" placeholder="Usage Code-Description" formControlName="usageCodeDescription" [matAutocomplete]="autoCodeDescription">
+                        <input type="text" class="input-field w-100" 
+                            placeholder="Usage Code-Description" 
+                            formControlName="usageCodeDescription" 
+                            [matAutocomplete]="autoCodeDescription">
                         <mat-autocomplete #autoCodeDescription="matAutocomplete">
-                            <mat-option *ngFor="let usageCodeDesc of filteredUsageCodeDesc | async" [value]="usageCodeDesc">
+                            <mat-option *ngFor="let usageCodeDesc of filteredUsageCodeDesc | async" 
+                            [value]="usageCodeDesc">
                             {{usageCodeDesc}}
                             </mat-option>
                         </mat-autocomplete>

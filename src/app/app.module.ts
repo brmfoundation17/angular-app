@@ -11,10 +11,11 @@ import {HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { UserConfigComponent } from './dialog/user-config/user-config.component';
+import { TabModule } from './tab/tab.module';
 @NgModule({
   declarations: [
-    AppComponent,
-       
+    AppComponent
+   
   ],
   imports: [
     SharedModule,
@@ -24,6 +25,7 @@ import { UserConfigComponent } from './dialog/user-config/user-config.component'
     HttpClientModule,
     MatSidenavModule,
     MatToolbarModule,    
+    TabModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

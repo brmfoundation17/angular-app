@@ -1,0 +1,11 @@
+<h1>Tab Works!</h1>
+
+<mat-tab-group (selectedTabChange)="onTabChanged();">
+    <mat-tab label="First">
+        <app-customer [errorFlag]="errorActivator"></app-customer>
+    </mat-tab>
+    <mat-tab label="Second">
+        <app-order></app-order>    
+    </mat-tab>    
+</mat-tab-group>
+

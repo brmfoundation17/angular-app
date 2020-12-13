@@ -23,8 +23,8 @@ export class DialogComponent implements OnInit {
       height: '500px',
       width: '600px',
       data: {
-        columnsList: this.columnsList,
-        sortedColumnToDisplay: this.sortedColumnToDisplay
+        dialogColumnsList: this.columnsList,
+        dialogSortedColumnToDisplay: this.sortedColumnToDisplay
       }
     });
 
