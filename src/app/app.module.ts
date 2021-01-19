@@ -12,9 +12,11 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { UserConfigComponent } from './dialog/user-config/user-config.component';
 import { TabModule } from './tab/tab.module';
+import { DownloadComponent } from './download/download.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DownloadComponent
    
   ],
   imports: [

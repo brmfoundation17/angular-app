@@ -47,6 +47,10 @@ export class NavigationModelService {
                 path: "tab",
                 component: "TabComponent",
                 displayName: "Tab"
+            },{
+                path: "download",
+                component: "DownloadComponent",
+                displayName: "Download"
             }             
         ]   
     }

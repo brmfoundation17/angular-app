@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DownloadComponent } from './download/download.component';
 import { TabComponent } from './tab/tab.component';
 
 const routes: Routes = [
@@ -41,6 +42,9 @@ const routes: Routes = [
   },{
     path: 'tab',
     component: TabComponent
+  },{
+    path: 'download',
+    component: DownloadComponent
   }
 ];
 
